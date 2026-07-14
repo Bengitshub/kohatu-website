@@ -1,0 +1,13 @@
+# DEMO deploy — keep out of search indexes until go-live.
+# At go-live: remove the X-Robots-Tag line and update robots.txt.
+/*
+  X-Robots-Tag: noindex
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

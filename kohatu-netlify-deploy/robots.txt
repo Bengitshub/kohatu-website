@@ -1,0 +1,4 @@
+# DEMO deploy — disallow all crawling until go-live.
+# At go-live: replace with "Allow: /" and a Sitemap: line for the production domain.
+User-agent: *
+Disallow: /
