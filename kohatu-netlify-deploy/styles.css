@@ -80,6 +80,7 @@ img { max-width: 100%; display: block; }
 .skip-link:focus { left: 0; }
 
 :focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+.next-band :focus-visible { outline-color: var(--ink-on-red); }
 
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 clamp(1.1rem, 4vw, 2rem); }
 
@@ -91,6 +92,7 @@ h1, h2, h3, .display {
   line-height: 1.04;
 }
 
+h1, h2, h3 { text-wrap: balance; }
 h2 { font-size: clamp(2.1rem, 5vw, 3.1rem); }
 h3 { font-size: clamp(1.35rem, 3vw, 1.7rem); }
 
@@ -133,7 +135,7 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
   color: var(--text); text-decoration: none; font-size: .95rem; font-weight: 600;
   padding: .35rem 0; border-bottom: 2px solid transparent;
 }
-.nav-links a:hover { color: var(--red); }
+.nav-links a:hover { color: var(--red); border-bottom-color: var(--red); }
 .nav-toggle {
   display: none; background: none; border: 1px solid var(--line); color: var(--text);
   border-radius: 8px; padding: .5rem .7rem; font-size: 1.15rem; cursor: pointer;
@@ -171,7 +173,7 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 
 /* ---------- hero ---------- */
 .hero {
-  position: relative; min-height: min(94vh, 900px); display: flex; align-items: flex-end;
+  position: relative; min-height: min(94vh, 900px); min-height: min(94svh, 900px); display: flex; align-items: flex-end;
   padding: 120px 0 clamp(2.5rem, 6vw, 5rem);
   isolation: isolate;
 }
@@ -180,13 +182,14 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 .hero::after {
   content: ''; position: absolute; inset: 0; z-index: -1;
   background:
-    linear-gradient(180deg, rgba(13,15,14,.55) 0%, rgba(13,15,14,.1) 35%, rgba(13,15,14,.82) 82%, var(--bg) 100%);
+    linear-gradient(180deg, rgba(13,15,14,.55) 0%, rgba(13,15,14,.42) 40%, rgba(13,15,14,.85) 82%, var(--bg) 100%);
 }
 .hero h1 {
   font-size: clamp(2.9rem, 8.5vw, 5.6rem);
   max-width: 13ch;
   text-wrap: balance;
 }
+.hero .kicker, .hero h1 { text-shadow: 0 1px 3px rgba(13,15,14,.9), 0 2px 16px rgba(13,15,14,.7); }
 .hero h1 em { font-style: normal; color: var(--red); }
 .hero-sub { max-width: 34rem; margin: 1.2rem 0 1.8rem; font-size: 1.15rem; color: #d9dcd7; }
 .hero-ctas { display: flex; gap: .9rem; flex-wrap: wrap; }
@@ -197,8 +200,8 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
   padding: 1rem 0;
 }
 .trust ul {
-  list-style: none; display: flex; flex-wrap: wrap; gap: .4rem 2.4rem;
-  justify-content: space-between;
+  list-style: none; display: flex; flex-wrap: wrap; gap: .5rem 2.8rem;
+  justify-content: center;
 }
 .trust li {
   font-family: var(--display); font-weight: 600; text-transform: uppercase;
@@ -249,6 +252,7 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 .event-meta {
   font-family: var(--display); font-weight: 600; text-transform: uppercase;
   letter-spacing: .1em; font-size: .98rem; color: var(--red);
+  text-wrap: balance;
 }
 .event-body h3 a { color: inherit; text-decoration: none; }
 .event-body h3 a:hover { color: var(--red); }
@@ -322,6 +326,7 @@ details .a a { color: var(--red); }
 .gal a { border-radius: 10px; overflow: hidden; display: block; border: 1px solid var(--line); }
 .gal img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; transition: transform .5s; }
 .gal a:hover img { transform: scale(1.05); }
+.gal a:first-child img { object-position: 50% 12%; }
 @media (max-width: 700px) { .gal { grid-template-columns: repeat(2, 1fr); } }
 
 /* ---------- capture ---------- */
@@ -330,11 +335,11 @@ details .a a { color: var(--red); }
 @media (max-width: 860px) { .capture-inner { grid-template-columns: 1fr; } }
 .capture form { display: grid; gap: .8rem; }
 .capture label { font-size: .9rem; font-weight: 600; }
-.capture input {
+.capture input, .capture select {
   width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--line);
   border-radius: 10px; padding: .9rem 1rem; font: inherit;
 }
-.capture input:focus { border-color: var(--red); outline: none; }
+.capture input:focus, .capture select:focus { border-color: var(--red); outline: none; box-shadow: 0 0 0 3px rgba(240, 78, 62, .35); }
 .form-note { font-size: .85rem; color: var(--muted); }
 
 /* ---------- footer ---------- */
