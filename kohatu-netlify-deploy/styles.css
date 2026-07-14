@@ -205,8 +205,10 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
     linear-gradient(180deg, rgba(13,15,14,.55) 0%, rgba(13,15,14,.42) 40%, rgba(13,15,14,.85) 82%, var(--bg) 100%);
 }
 .hero .wrap { width: 100%; }
+.hero h1 br { display: none; }
+@media (min-width: 900px) { .hero h1 br { display: block; } }
 .hero h1 {
-  font-size: clamp(3.1rem, 9.6vw, 9rem);
+  font-size: clamp(3.1rem, 9.3vw, 8.4rem);
   max-width: none;
   text-wrap: balance;
 }
@@ -294,19 +296,19 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 /* ---------- grades ---------- */
 .grade-list { display: grid; gap: .8rem; }
 .grade-row {
-  display: grid; grid-template-columns: auto 1fr; gap: 1.1rem; align-items: start;
+  display: grid; grid-template-columns: auto 1fr; gap: 1.3rem; align-items: start;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 1.1rem 1.3rem;
+  padding: 1.35rem 1.5rem;
 }
 .grade-num {
   font-family: var(--disp-heavy); font-weight: 400; font-size: 2rem; line-height: 1;
   width: 58px; height: 58px; border-radius: 4px; display: grid; place-items: center;
-  transform: rotate(-2deg);
+  transform: rotate(-2deg); margin-top: .2rem;
   color: var(--bg);
 }
 .grade-row h3 { font-size: 1.3rem; }
-.grade-row h3 span { color: var(--muted); font-family: var(--body); font-weight: 400; text-transform: none; letter-spacing: 0; font-size: .95rem; display: block; margin-top: .15rem; }
-.grade-row p { color: var(--muted); font-size: .95rem; margin-top: .35rem; }
+.grade-row h3 span { color: var(--muted); font-family: var(--body); font-weight: 400; text-transform: none; letter-spacing: 0; font-size: .95rem; display: block; margin-top: .35rem; }
+.grade-row p { color: var(--muted); font-size: .95rem; margin-top: .6rem; max-width: 72ch; }
 
 /* ---------- split bands (trail rides / park / about) ---------- */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
