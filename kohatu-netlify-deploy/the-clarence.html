@@ -60,12 +60,12 @@
     </a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">&#9776;</button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="./#rides">Rides &amp; Events</a></li>
-      <li><a href="./#grades">Grades</a></li>
-      <li><a href="./#trail-rides">Trail Rides</a></li>
-      <li><a href="./#park">The Park</a></li>
-      <li><a href="./#gallery">Gallery</a></li>
-      <li><a href="./#contact">Contact</a></li>
+      <li><a href="rides.html">Rides &amp; Events</a></li>
+      <li><a href="index.html#grades">Grades</a></li>
+      <li><a href="trail-rides.html">Trail Rides</a></li>
+      <li><a href="park.html">The Park</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
       <li><a class="btn btn-red" href="#book">Book this ride</a></li>
     </ul>
   </div>
@@ -81,11 +81,11 @@
          alt="Adventure riders and bikes gathered on a Clarence river gravel bar beneath bush-clad mountains">
   </div>
   <div class="wrap">
-    <p class="crumb"><a href="./#rides">Rides &amp; events</a> / Multi-day</p>
+    <p class="crumb"><a href="rides.html">Rides &amp; events</a> / Multi-day</p>
     <h1>The Clarence</h1>
     <div class="detail-flags">
       <span class="badge badge-soon">March 2027 · Dates announced soon</span>
-      <a class="badge" href="./#grades"><span class="dot" style="background:var(--g3)"></span>Grade 3 — Station rider</a>
+      <a class="badge" href="index.html#grades"><span class="dot" style="background:var(--g3)"></span>Grade 3 — Station rider</a>
     </div>
   </div>
 </section>
@@ -159,10 +159,32 @@
           <li>Sweep riders</li>
           <li>Luggage support vehicle</li>
         </ul>
-        <button class="btn btn-red" id="book-btn">Book your spot</button>
+        <button class="btn btn-red" data-open="book-demo" style="width:100%">Book your spot</button>
         <p class="alt">Entries limited · or <a href="mailto:dave@kohatumc.co.nz?subject=The%20Clarence%20—%20register%20interest">register interest by email</a></p>
       </aside>
     </div>
+
+<div class="enquiry-panel" id="enquire">
+  <span class="kicker">Register interest</span>
+  <h2 style="font-size:clamp(1.9rem,4vw,2.6rem); margin-bottom:1.2rem">Get on the list for The Clarence</h2>
+  <form class="js-demo-form form-grid" data-dialog="enquiry-demo" method="POST" action="#enquire">
+    <div><label for="q-name">Name</label><input id="q-name" name="name" type="text" autocomplete="name" required></div>
+    <div><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required></div>
+    <div><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" autocomplete="tel" required></div>
+    <div><label for="q-ename">Emergency contact name</label><input id="q-ename" name="emergency-name" type="text" required></div>
+    <div><label for="q-ephone">Emergency contact phone</label><input id="q-ephone" name="emergency-phone" type="tel" required></div>
+    <div><label for="q-msg">Your bike / anything we should know</label><input id="q-msg" name="message" type="text"></div>
+    <div class="full"><button class="btn btn-red" type="submit">Register interest</button>
+    <p class="form-note" style="margin-top:.7rem">Same details Dave collects today — see our <a href="privacy.html" style="color:var(--red)">privacy statement</a>.</p></div>
+  </form>
+</div>
+
+<dialog class="book-demo" id="enquiry-demo">
+  <h3>On the live site, this goes straight onto the entry list</h3>
+  <p>Rider details, emergency contact and bike info land in one tidy list — no email back-and-forth. With online payment connected (Humanitix), the entry fee is settled at the same time and capacity counts down automatically.</p>
+  <p>This is a demo — nothing was stored.</p>
+  <button class="btn btn-line" data-close>Close</button>
+</dialog>
   </div>
 </section>
 
@@ -172,7 +194,7 @@
   <h3>This is where riders book &amp; pay online</h3>
   <p>On the live site this button opens a secure embedded checkout (Humanitix) right here on the page: card payment, rider details, emergency contact, bike and licence info — all captured automatically.</p>
   <p>Capacity is tracked in real time, sold-out rides flip to a wait-list, and every entry lands in one tidy list. No spreadsheets, no phone tag.</p>
-  <button class="btn btn-line" id="book-close">Close</button>
+  <button class="btn btn-line" data-close>Close</button>
 </dialog>
 
 <footer id="contact">
@@ -201,53 +223,21 @@
       <div>
         <h3>Rides</h3>
         <ul>
-          <li><a href="./#rides">Upcoming events</a></li>
-          <li><a href="./#trail-rides">Trail rides</a></li>
-          <li><a href="./#park">The park</a></li>
-          <li><a href="./#ride-list">Join the ride list</a></li>
+          <li><a href="rides.html">Upcoming events</a></li>
+          <li><a href="trail-rides.html">Trail rides</a></li>
+          <li><a href="park.html">The park</a></li>
+          <li><a href="index.html#ride-list">Join the ride list</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-legal">
       <span>&copy; <span id="yr">2026</span> Kohatu Motorcycle Centre Ltd</span>
-      <span><a href="terms.html">Terms &amp; refunds</a> · Site by <a href="https://webhero.au">Webhero</a></span>
+      <span><a href="terms.html">Terms &amp; refunds</a> · <a href="privacy.html">Privacy</a> · Site concept by <a href="mailto:ben@webhero.au">Webhero</a></span>
     </div>
   </div>
 </footer>
 
-<script>
-(function () {
-  var nav = document.getElementById('nav');
-  var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 24); };
-  addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  var toggle = document.querySelector('.nav-toggle');
-  var links = document.getElementById('nav-links');
-  toggle.addEventListener('click', function () {
-    var open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-  });
-  links.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') { links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
-  });
-
-  var dlg = document.getElementById('book-demo');
-  document.getElementById('book-btn').addEventListener('click', function () { dlg.showModal(); });
-  document.getElementById('book-close').addEventListener('click', function () { dlg.close(); });
-  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
-
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
-  }
-
-  document.getElementById('yr').textContent = new Date().getFullYear();
-})();
-</script>
+<div id="concept-bar" role="note"><span><b>Concept preview by Webhero</b> — event dates, routes, pricing and inclusions are subject to confirmation by Kohatu Motorcycle Centre.</span><button id="concept-bar-close" aria-label="Dismiss notice">&times;</button></div>
+<script src="site.js" defer></script>
 </body>
 </html>

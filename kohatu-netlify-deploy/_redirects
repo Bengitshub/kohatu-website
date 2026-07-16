@@ -1,0 +1,22 @@
+# 301 map from the current kohatumc.co.nz URLs to the rebuilt pages.
+# Live on this demo so the pattern is demonstrable; carries over at go-live.
+/adventure-motorcycle-events                                    /rides.html                     301
+/adventure-motorcycle-events/the-clarence                       /the-clarence.html              301
+/adventure-motorcycle-events/the-five-year-plan-jMPFu           /five-year-plan.html            301
+/adventure-motorcycle-events/sounds-like                        /sounds-like.html               301
+/adventure-motorcycle-events/nelson-tasman-motorcycle-festival  /nelson-tasman-festival.html    301
+/adventure-motorcycle-events/wellingtonmotorcyclefestival       /wellington-festival.html       301
+/adventure-motorcycle-events/anything-mechanical                /summer-series.html             301
+/adventure-motorcycle-events/lake-matiri-with-a-tractor         /summer-series.html             301
+/adventure-motorcycle-events/raineyriverroad                    /summer-series.html             301
+/adventure-motorcycle-events/tempello                           /summer-series.html             301
+/adventure-motorcycle-events/tba                                /rides.html                     301
+/adventure-motorcycle-events/category/*                         /rides.html                     301
+/trail-rides                                                    /trail-rides.html               301
+/park                                                           /park.html                      301
+/location                                                       /park.html                      301
+/gallery                                                        /gallery.html                   301
+/terms-conditions                                               /terms.html                     301
+/home                                                           /                               301
+/home-2                                                         /                               301
+/nelson-tasman-motorcycle-events                                /nelson-tasman-festival.html    301

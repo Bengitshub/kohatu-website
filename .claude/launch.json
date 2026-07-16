@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "kohatu-deploy",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8742", "--directory", "/Users/mac/Sites/kohatu-website/kohatu-netlify-deploy"],
+      "port": 8742
+    }
+  ]
+}

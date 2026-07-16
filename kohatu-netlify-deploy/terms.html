@@ -21,12 +21,12 @@
     </a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">&#9776;</button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="./#rides">Rides &amp; Events</a></li>
-      <li><a href="./#grades">Grades</a></li>
-      <li><a href="./#trail-rides">Trail Rides</a></li>
-      <li><a href="./#park">The Park</a></li>
-      <li><a href="./#gallery">Gallery</a></li>
-      <li><a href="./#contact">Contact</a></li>
+      <li><a href="rides.html">Rides &amp; Events</a></li>
+      <li><a href="index.html#grades">Grades</a></li>
+      <li><a href="trail-rides.html">Trail Rides</a></li>
+      <li><a href="park.html">The Park</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
     </ul>
   </div>
 </header>
@@ -53,13 +53,11 @@
   <div class="wrap">
     <div class="foot-legal">
       <span>&copy; 2026 Kohatu Motorcycle Centre Ltd</span>
-      <span>Site by <a href="https://webhero.au">Webhero</a></span>
+      <span><a href="privacy.html">Privacy</a> · Site concept by <a href="mailto:ben@webhero.au">Webhero</a></span>
     </div>
   </div>
 </footer>
-<script>
-var t = document.querySelector('.nav-toggle'), l = document.getElementById('nav-links');
-t.addEventListener('click', function () { t.setAttribute('aria-expanded', l.classList.toggle('open')); });
-</script>
+<div id="concept-bar" role="note"><span><b>Concept preview by Webhero</b> — event dates, routes, pricing and inclusions are subject to confirmation by Kohatu Motorcycle Centre.</span><button id="concept-bar-close" aria-label="Dismiss notice">&times;</button></div>
+<script src="site.js" defer></script>
 </body>
 </html>
