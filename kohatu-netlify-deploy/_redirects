@@ -1,22 +1,36 @@
-# 301 map from the current kohatumc.co.nz URLs to the rebuilt pages.
-# Live on this demo so the pattern is demonstrable; carries over at go-live.
-/adventure-motorcycle-events                                    /rides.html                     301
-/adventure-motorcycle-events/the-clarence                       /the-clarence.html              301
-/adventure-motorcycle-events/the-five-year-plan-jMPFu           /five-year-plan.html            301
-/adventure-motorcycle-events/sounds-like                        /sounds-like.html               301
-/adventure-motorcycle-events/nelson-tasman-motorcycle-festival  /nelson-tasman-festival.html    301
-/adventure-motorcycle-events/wellingtonmotorcyclefestival       /wellington-festival.html       301
-/adventure-motorcycle-events/anything-mechanical                /summer-series.html             301
-/adventure-motorcycle-events/lake-matiri-with-a-tractor         /summer-series.html             301
-/adventure-motorcycle-events/raineyriverroad                    /summer-series.html             301
-/adventure-motorcycle-events/tempello                           /summer-series.html             301
-/adventure-motorcycle-events/tba                                /rides.html                     301
-/adventure-motorcycle-events/category/*                         /rides.html                     301
-/trail-rides                                                    /trail-rides.html               301
-/park                                                           /park.html                      301
-/location                                                       /park.html                      301
-/gallery                                                        /gallery.html                   301
-/terms-conditions                                               /terms.html                     301
-/home                                                           /                               301
-/home-2                                                         /                               301
-/nelson-tasman-motorcycle-events                                /nelson-tasman-festival.html    301
+# 301 map: current kohatumc.co.nz URLs -> V2 routes (live on this preview, carries to launch)
+/adventure-motorcycle-events                                    /events/adventure/               301
+/adventure-motorcycle-events/the-clarence                       /events/the-clarence/            301
+/adventure-motorcycle-events/the-five-year-plan-jMPFu           /events/five-year-plan/          301
+/adventure-motorcycle-events/sounds-like                        /events/sounds-like/             301
+/adventure-motorcycle-events/nelson-tasman-motorcycle-festival  /events/nelson-tasman-motorcycle-festival/ 301
+/adventure-motorcycle-events/wellingtonmotorcyclefestival       /events/wellington-motorcycle-festival/    301
+/adventure-motorcycle-events/anything-mechanical                /events/anything-mechanical/     301
+/adventure-motorcycle-events/lake-matiri-with-a-tractor         /events/lake-matiri/             301
+/adventure-motorcycle-events/raineyriverroad                    /events/rainey-river-lakes-station/ 301
+/adventure-motorcycle-events/tempello                           /events/tempello/                301
+/adventure-motorcycle-events/tba                                /events/                         301
+/adventure-motorcycle-events/category/*                         /events/                         301
+/mountain-bike-events                                           /events/torque-and-trails/       301
+/trail-rides                                                    /events/trail-rides/             301
+/park                                                           /kohatu-park/                    301
+/location                                                       /location/                       200
+/gallery                                                        /gallery/                        200
+/terms-conditions                                               /terms/                          301
+/home                                                           /                                301
+/home-2                                                         /                                301
+/nelson-tasman-motorcycle-events                                /events/nelson-tasman-motorcycle-festival/ 301
+
+# V1 flat demo URLs -> V2 routes
+/rides.html                     /events/                                   301
+/five-year-plan.html            /events/five-year-plan/                    301
+/the-clarence.html              /events/the-clarence/                      301
+/sounds-like.html               /events/sounds-like/                       301
+/nelson-tasman-festival.html    /events/nelson-tasman-motorcycle-festival/ 301
+/wellington-festival.html       /events/wellington-motorcycle-festival/    301
+/summer-series.html             /events/past/                              301
+/trail-rides.html               /events/trail-rides/                       301
+/park.html                      /kohatu-park/                              301
+/gallery.html                   /gallery/                                  301
+/privacy.html                   /privacy/                                  301
+/terms.html                     /terms/                                    301
