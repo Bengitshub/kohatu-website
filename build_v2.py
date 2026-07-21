@@ -132,7 +132,7 @@ CONCEPT_BAR = ('<div id="concept-bar" role="note"><span><b>Concept preview</b> �
 
 INTEREST_DIALOG = """<dialog class="book-demo" id="demo-form-ok">
   <h3>Thanks — you're on the preview list</h3>
-  <p>This is a website preview, so the form is not currently connected and nothing was stored. On the live site, this joins the ride list and you'll hear the moment entries open.</p>
+  <p>This is a website preview, so the form is not currently connected and nothing was stored.</p>
   <p>Want in right now? Email <a href="mailto:dave@kohatumc.co.nz" style="color:var(--red)">dave@kohatumc.co.nz</a> or call <a href="tel:+64274486688" style="color:var(--red)">+64 27 448 6688</a>.</p>
   <button class="btn btn-line" data-close>Close</button>
 </dialog>"""
@@ -569,7 +569,7 @@ def build_homepage():
     <div class="why-grid">
       <div class="why-item reveal"><h3>Access riders can't get alone</h3><p>Stations, farms and forestry blocks closed to the public — negotiated ride by ride with local landowners.</p></div>
       <div class="why-item reveal"><h3>Scouted routes, GPX navigation</h3><p>Adventure routes are scouted in advance, with GPX navigation supplied where the event format requires it.</p></div>
-      <div class="why-item reveal"><h3>Sweeps, marshals &amp; first aid</h3><p>Sweep riders on multi-days, marshals and first aid on trail rides. Nobody gets left in a creek bed.</p></div>
+      <div class="why-item reveal"><h3>Sweeps, marshals &amp; first aid</h3><p>Navigation and support appropriate to each event — sweep riders on supported multi-day formats, marshals and first aid where specified.</p></div>
       <div class="why-item reveal"><h3>Money back into the districts</h3><p>Selected events have raised funds for Nelson Tasman Search &amp; Rescue, while some ride entries also contribute to community facilities and farm-track maintenance.</p></div>
     </div>
   </div>
@@ -711,13 +711,13 @@ def build_aux():
 
     # ---- safety & support ----
     inner = """<div class="detail-main" style="max-width:52rem">
-      <h2>What runs behind every ride</h2>
+      <h2>Support used across Kohatu events</h2>
       <ul>
         <li><b>Scouted routes</b> — adventure routes are scouted in advance, with GPX navigation supplied where the event format requires it.</li>
-        <li><b>Sweep riders</b> — multi-day rides run with sweep riders so nobody is left behind.</li>
-        <li><b>Marshals, recovery and first aid</b> — trail rides run with marshals, recovery and first-aid support on site.</li>
-        <li><b>Sign-on and briefing</b> — every event starts with registration and a riders' briefing; trail rides sign riders out at the finish.</li>
-        <li><b>Luggage support</b> — a support vehicle carries overnight gear on multi-day rides.</li>
+        <li><b>Sweep riders</b> — on supported multi-day formats, so nobody is left behind.</li>
+        <li><b>Marshals, recovery and first aid</b> — where specified for the event, on site all day.</li>
+        <li><b>Sign-on and briefing</b> — ride events start with registration and a riders' briefing; trail rides sign riders out at the finish.</li>
+        <li><b>Luggage support</b> — where included on the event page, a support vehicle carries overnight gear.</li>
         <li><b>Route changes</b> — rides cross live rivers and working farms; sections can change on the day when conditions demand it.</li>
       </ul>
       <h2>The honest limits</h2>
@@ -813,7 +813,7 @@ def build_aux():
       <div class="detail-main">
         <h2>Built by riders, run by riders</h2>
         <p>Kohatu Motorcycle Centre is Dave's project: a leased block at Kohatu Park, built up with volunteer help into a training ground — in his own words, a place to train for our sport and become safer, more capable riders. But mostly for fun.</p>
-        <p>The events grew from there: local landowners opened their gates, the rides got longer, and now the calendar runs from one-day blasts and no-rego trail rides to festivals, e-MTB racing and a five-year ride down the length of the country. Events are built around route planning, access arrangements and support appropriate to each format — and selected events have raised funds for Nelson Tasman Search &amp; Rescue, community facilities and farm-track maintenance.</p>
+        <p>The events grew from there: local landowners opened their gates, the rides got longer, and now the calendar runs from one-day blasts and no-rego trail rides to festivals, e-MTB racing and a five-year ride down the length of the country. Events are built around route planning, access arrangements and support appropriate to each format. Selected events have also raised funds for Search and Rescue, community facilities and local organisations.</p>
         <p>Want to talk rides, the park, or an idea for an event? <a href="mailto:dave@kohatumc.co.nz" style="color:var(--red)">Email Dave</a> or call <a href="tel:+64274486688" style="color:var(--red)">+64 27 448 6688</a>.</p>
       </div>
     </div>"""
@@ -916,13 +916,8 @@ def build_proposal():
       </ul>
       <p>Ongoing: an optional <b>NZ$129/month care plan</b> — hosting oversight, event and date updates, status changes, and new event pages as your calendar moves.</p>
       <h2>What you'd confirm before launch</h2>
-      <ul>
-        <li>Event dates, prices, inclusions and capacities (including the Five Year Plan price and pack)</li>
-        <li>Deep in the Sounds details; Torque and Trails format and next round</li>
-        <li>Park entry requirements; grading names and per-event grades</li>
-        <li>Photo and rider permissions; film usage with Blake Jones and RideLifeNZ</li>
-        <li>Privacy wording and participant terms (legal review recommended before online entries)</li>
-      </ul>
+      <p>All event dates, prices, inclusions and capacities; Five Year Plan price and information pack; Deep in the Sounds details; Torque and Trails locations and format; park entry and motorcycle requirements; grading; image and film permissions; privacy wording; participant terms and legal review; booking provider; mailing provider.</p>
+      <p><b>Information carried across from the existing Kohatu website reflects previously published material and must not be treated as confirmation that it remains current.</b></p>
       <p style="margin-top:1.6rem">
         <a class="btn btn-red" href="mailto:ben@webhero.au?subject=Kohatu%20website">Email Ben</a>
         <a class="btn btn-ghost" href="/" style="margin-left:.6rem">Back to the site</a>

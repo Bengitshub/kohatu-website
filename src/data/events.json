@@ -484,9 +484,9 @@
       "category": "emtb",
       "format": "series",
       "status": "provisional",
-      "dateLabel": "Next round to be confirmed",
+      "dateLabel": "Next event to be confirmed",
       "startDate": null,
-      "region": "Selected trail locations, Nelson",
+      "region": "Nelson Tasman — location to be confirmed",
       "grade": null,
       "gradeLabel": "e-MTB riders",
       "duration": "Series",
@@ -496,19 +496,15 @@
       "currency": "NZD",
       "heroMedia": "emtb-hero",
       "cardMedia": "emtb-group",
-      "summary": "Kohatu's e-mountain-bike uphill racing format, held at selected trail locations around Nelson — past riders in the gallery, next round to be confirmed.",
+      "summary": "Kohatu's e-MTB event format — previous and future locations, competition format, dates and entry details require confirmation from Dave.",
       "body": [
         [
-          "The series",
-          "Torque and Trails is Kohatu's e-mountain-bike uphill racing format, held at selected trail locations around Nelson. The first published event was Round One of a proposed three-round series at Codgers."
+          "The format",
+          "Torque and Trails is Kohatu's e-mountain-bike event format. Previous and future locations, competition format, dates and entry details require confirmation from Dave."
         ],
         [
-          "Previous format",
-          "<ul><li>E-mountain bikes only</li><li>Uphill racing on selected downhill trails</li><li>Four timed climbs and three descents in the first published round</li><li>An outright fastest-time competition</li><li>A separate handicap competition based on rider age, rider weight and bike torque</li><li>Sponsor-supported prizes and an evening prizegiving</li></ul>"
-        ],
-        [
-          "Next round",
-          "Next-round dates, location, format, sponsors and entry details are to be confirmed by Dave. Register interest below and you'll hear first."
+          "Next event",
+          "Register interest below and you'll hear as soon as the next round is confirmed."
         ]
       ],
       "included": [],
