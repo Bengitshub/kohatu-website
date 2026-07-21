@@ -1,0 +1,38 @@
+KOHATU MOTORCYCLE CENTRE — WEBSITE HANDOVER
+============================================
+This folder is the complete website: plain HTML, CSS, JavaScript and images.
+No database, no CMS, no installs. It runs on any static web host.
+
+PREVIEW: https://kohatu-demo.netlify.app  (hidden from Google until launch)
+
+THREE WAYS TO GO LIVE
+---------------------
+1. Simplest — keep current hosting (Netlify, free tier):
+   Change two DNS records at iwantmyname (where kohatumc.co.nz is managed):
+     apex A record:  198.49.23.145  ->  75.2.60.5
+     www CNAME:      ext-cust.squarespace.com  ->  [site].netlify.app
+   Email records (MX/TXT) must NOT be changed — email stays on Microsoft 365.
+   SSL certificate provisions automatically.
+
+2. Dave owns the hosting:
+   Make a free account at netlify.com, then either accept a site transfer
+   from Webhero, or drag this whole folder onto app.netlify.com/drop.
+   Then do the same two DNS changes above.
+
+3. Any other static host (e.g. Cloudflare Pages): upload this folder.
+   The _redirects and _headers files work as-is on Netlify/Cloudflare;
+   other hosts may need them converted.
+
+BEFORE PUBLIC LAUNCH (Webhero does this)
+----------------------------------------
+- Remove the search-engine block (currently on while it's a preview)
+- Connect the ride-list form to a mailing provider
+- Connect online entries to the chosen ticketing provider
+- Confirm all provisional dates, prices and inclusions with Dave
+
+Updating events later: all event content lives in one data file
+(src/data/events.json in the project repository); one small edit updates
+every page. Webhero can handle this under the care plan, or set it up
+for self-editing.
+
+Webhero — ben@webhero.au
