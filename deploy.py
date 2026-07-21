@@ -55,3 +55,4 @@ with open(ZIP, "rb") as f:
 
 print("deployed:", deploy.get("state"))
 print("URL: https://%s.netlify.app" % site["name"])
+print("PERMALINK: https://%s--%s.netlify.app" % (deploy.get("id"), site["name"]))

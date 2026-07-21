@@ -19,7 +19,7 @@ PREVIEW = True  # flip to False at production launch: removes site-wide noindex
 STATUS = {
     "provisional":   ("Dates to be confirmed", "badge-soon",  "Get event updates"),
     "check-availability": ("Contact Dave for availability", "badge-open", "Check availability with Dave"),
-    "interest-open": ("Registering interest",  "badge-open",  "Register interest"),
+    "interest-open": ("Interest open",          "badge-open",  "Register interest"),
     "entries-open":  ("Entries open",          "badge-open",  "Book your place"),
     "limited":       ("Final spaces",          "badge-open",  "Book final spaces"),
     "sold-out":      ("Sold out",              "badge-soon",  "View event"),
