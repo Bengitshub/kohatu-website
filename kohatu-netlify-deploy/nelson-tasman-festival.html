@@ -50,7 +50,7 @@
       <li><a href="park.html">The Park</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a class="btn btn-red" href="rides.html">Book a ride</a></li>
+      <li><a class="btn btn-red" href="rides.html">Upcoming rides</a></li>
     </ul>
   </div>
 </header>
@@ -110,17 +110,15 @@
     <div><label for="q-name">Name</label><input id="q-name" name="name" type="text" autocomplete="name" required></div>
     <div><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required></div>
     <div><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" autocomplete="tel" required></div>
-    <div><label for="q-ename">Emergency contact name</label><input id="q-ename" name="emergency-name" type="text" required></div>
-    <div><label for="q-ephone">Emergency contact phone</label><input id="q-ephone" name="emergency-phone" type="tel" required></div>
-    <div><label for="q-msg">Your bike / anything we should know</label><input id="q-msg" name="message" type="text"></div>
+    <div class="full"><label for="q-bike">Your bike (optional)</label><input id="q-bike" name="bike" type="text"></div>
     <div class="full"><button class="btn btn-red" type="submit">Register interest</button>
-    <p class="form-note" style="margin-top:.7rem">Same details Dave collects today — see our <a href="privacy.html" style="color:var(--red)">privacy statement</a>.</p></div>
+    <p class="form-note" style="margin-top:.7rem">Just enough to keep you posted — full rider details are collected when you book. See our <a href="privacy.html" style="color:var(--red)">privacy statement</a>.</p></div>
   </form>
 </div>
 
 <dialog class="book-demo" id="enquiry-demo">
   <h3>On the live site, this goes straight onto the entry list</h3>
-  <p>Rider details, emergency contact and bike info land in one tidy list — no email back-and-forth. With online payment connected (Humanitix), the entry fee is settled at the same time and capacity counts down automatically.</p>
+  <p>Interest lands in one tidy list, so &quot;entries open&quot; reaches everyone in one hit. When a rider books, the full entry — payment, emergency contact, bike and licence details — is collected in one step (Humanitix) and capacity counts down automatically.</p>
   <p>This is a demo — nothing was stored.</p>
   <button class="btn btn-line" data-close>Close</button>
 </dialog>

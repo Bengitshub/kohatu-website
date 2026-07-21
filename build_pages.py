@@ -20,7 +20,7 @@ NAV = """<header class="nav scrolled" id="nav">
       <li><a href="park.html">The Park</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a class="btn btn-red" href="rides.html">Book a ride</a></li>
+      <li><a class="btn btn-red" href="rides.html">Upcoming rides</a></li>
     </ul>
   </div>
 </header>"""
@@ -74,11 +74,9 @@ ENQUIRY = """<div class="enquiry-panel" id="enquire">
     <div><label for="q-name">Name</label><input id="q-name" name="name" type="text" autocomplete="name" required></div>
     <div><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required></div>
     <div><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" autocomplete="tel" required></div>
-    <div><label for="q-ename">Emergency contact name</label><input id="q-ename" name="emergency-name" type="text" required></div>
-    <div><label for="q-ephone">Emergency contact phone</label><input id="q-ephone" name="emergency-phone" type="tel" required></div>
-    <div><label for="q-msg">Your bike / anything we should know</label><input id="q-msg" name="message" type="text"></div>
+    <div class="full"><label for="q-bike">Your bike (optional)</label><input id="q-bike" name="bike" type="text"></div>
     <div class="full"><button class="btn btn-red" type="submit">Register interest</button>
-    <p class="form-note" style="margin-top:.7rem">Same details Dave collects today — see our <a href="privacy.html" style="color:var(--red)">privacy statement</a>.</p></div>
+    <p class="form-note" style="margin-top:.7rem">Just enough to keep you posted — full rider details are collected when you book. See our <a href="privacy.html" style="color:var(--red)">privacy statement</a>.</p></div>
   </form>
 </div>
 

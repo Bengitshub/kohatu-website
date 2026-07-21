@@ -44,3 +44,5 @@ At go-live (if Dave signs): remove `X-Robots-Tag: noindex` from `_headers`, open
 - Remove `X-Robots-Tag: noindex` from `_headers`, open robots.txt, add sitemap
 - Connect Humanitix embedded checkout on event pages (replaces book-demo dialog)
 - 11 ha lease figure on park.html/about (from news research, not Dave's site) — confirm with Dave
+- "Deep in the Sounds" (Facebook-promoted, starts Fri 24 Jul 2026, listed via allevents.in under Kohatu's org, organiser shown as Nelson Motorcycles) — on the demo's "this week" band; confirm details/ownership with Dave. His website not listing it is a pitch talking point.
+- Five Year Plan PDF removed from demo (Oct 2025 upload, describes the original Feb 2026 running — contradicts the August reschedule). Dave to issue an updated pack.
