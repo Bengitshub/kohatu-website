@@ -33,3 +33,6 @@
 ## QA
 - Programmatic: 31 pages, 0 broken internal references, all JSON-LD parses, one h1 per page, noindex on proposal only. Live checks: all routes 200, old-URL 301s verified, status strip live.
 - Agent QA (acceptance audit + content pass): results appended below when complete.
+
+### Agent QA results (2-agent pass, post-build)
+Zero blockers. 9 should-fix findings, all applied: route collision (Torque listing overwrote the event page — form restored), "warranted"→rego/WoF, NZ$ prefix, unverifiable "uphill racing/prizegiving" wording removed from Torque pages, sponsors page corrected (Stuart Drummond Transport Bronze sponsor + Bronze/Silver/Gold park tiers restored from Dave's own copy; Tasman Honda softened to imagery-supported wording), fundraising claim scoped to sourced beneficiaries, About origin story rewritten to Dave's own FAQ framing, proposal "nothing invented" claim honestly scoped, "ride-side" coinage replaced. One finding overruled with evidence: SAR fundraising is documented on Dave's festival page. Remaining nice-to-haves (JSON-LD for past events, minor phrasing) logged in the QA task output.
