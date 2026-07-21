@@ -46,3 +46,25 @@ At go-live (if Dave signs): remove `X-Robots-Tag: noindex` from `_headers`, open
 - 11 ha lease figure on park.html/about (from news research, not Dave's site) — confirm with Dave
 - "Deep in the Sounds" (Facebook-promoted, starts Fri 24 Jul 2026, listed via allevents.in under Kohatu's org, organiser shown as Nelson Motorcycles) — on the demo's "this week" band; confirm details/ownership with Dave. His website not listing it is a pitch talking point.
 - Five Year Plan PDF removed from demo (Oct 2025 upload, describes the original Feb 2026 running — contradicts the August reschedule). Dave to issue an updated pack.
+
+## Dave's current hosting (recon, 21 Jul 2026)
+
+- **Domain**: kohatumc.co.nz — registered + DNS hosted at **iwantmyname** (NZ registrar; nameservers dns1-3.iwantmyname.com). Ask Dave who holds this login — possibly HotHouse (the previous designer).
+- **Website**: Squarespace, connected externally (apex A 198.49.23.145; www CNAME ext-cust.squarespace.com). Squarespace subscription can be cancelled after cutover (~NZ$30+/mo saved).
+- **Email**: dave@kohatumc.co.nz runs on **Microsoft 365** (MX mail.protection.outlook.com; SPF + MS= TXT records). DO NOT touch MX/TXT during cutover.
+- Existing google-site-verification TXT (Search Console verified by someone — likely HotHouse; re-verify under Dave/Webhero at launch).
+
+## Go-live cutover runbook (after Dave signs)
+
+1. In build_v2.py: set PREVIEW = False and BASE_URL = "https://www.kohatumc.co.nz" (pick www or apex as canonical); rebuild.
+2. Remove `X-Robots-Tag: noindex` from _headers; robots.txt → allow + Sitemap line; generate sitemap.xml.
+3. Connect forms (mailing provider) + ticketing per proposal; remove js-demo-form interceptor.
+4. Netlify: rename/create production site, add custom domain kohatumc.co.nz + www (Netlify auto-provisions Let's Encrypt SSL).
+5. At iwantmyname DNS, change ONLY two records (email untouched):
+   - apex A: 198.49.23.145 → 75.2.60.5 (Netlify load balancer)
+   - www CNAME: ext-cust.squarespace.com → <site>.netlify.app
+6. Verify SSL + all pages + path redirects (old Squarespace URLs already 301 via _redirects), verify email still flows (send/receive test).
+7. Search Console: verify property, submit sitemap.
+8. After a week of stability: cancel the Squarespace subscription (export nothing needed — all content migrated).
+
+Ownership options: (a) site stays on Webhero's Netlify under the NZ$129/mo care plan — recommended; (b) transfer the Netlify site + GitHub repo to Dave's own accounts if he wants self-management.
