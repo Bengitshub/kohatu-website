@@ -14,9 +14,11 @@ IMG = MEDIA["images"]
 EV = {e["id"]: e for e in DATA}
 
 BASE_URL = "https://kohatu-demo.netlify.app"
+PREVIEW = True  # flip to False at production launch: removes site-wide noindex
 
 STATUS = {
     "provisional":   ("Dates to be confirmed", "badge-soon",  "Get event updates"),
+    "check-availability": ("Contact Dave for availability", "badge-open", "Check availability with Dave"),
     "interest-open": ("Registering interest",  "badge-open",  "Register interest"),
     "entries-open":  ("Entries open",          "badge-open",  "Book your place"),
     "limited":       ("Final spaces",          "badge-open",  "Book final spaces"),
@@ -130,7 +132,7 @@ CONCEPT_BAR = ('<div id="concept-bar" role="note"><span><b>Concept preview</b> �
 
 INTEREST_DIALOG = """<dialog class="book-demo" id="demo-form-ok">
   <h3>Thanks — you're on the preview list</h3>
-  <p>This is a preview website, so nothing was stored. When the site goes live, this form joins the ride list and you'll hear the moment entries open.</p>
+  <p>This is a website preview, so the form is not currently connected and nothing was stored. On the live site, this joins the ride list and you'll hear the moment entries open.</p>
   <p>Want in right now? Email <a href="mailto:dave@kohatumc.co.nz" style="color:var(--red)">dave@kohatumc.co.nz</a> or call <a href="tel:+64274486688" style="color:var(--red)">+64 27 448 6688</a>.</p>
   <button class="btn btn-line" data-close>Close</button>
 </dialog>"""
@@ -138,7 +140,12 @@ INTEREST_DIALOG = """<dialog class="book-demo" id="demo-form-ok">
 
 def page(path, title, desc, body, jsonld="", ogimg="img/hero-ford-1200.webp", noindex=False, strip=True):
     canonical = BASE_URL + path
-    robots = '<meta name="robots" content="noindex">\n' if noindex else ""
+    if noindex:
+        robots = '<meta name="robots" content="noindex, nofollow">\n'
+    elif PREVIEW:
+        robots = '<meta name="robots" content="noindex, nofollow">\n'
+    else:
+        robots = ""
     strip_html = status_strip() if strip else ""
     html = f"""<!DOCTYPE html>
 <html lang="en-NZ">
@@ -279,7 +286,8 @@ def build_event_pages():
 
         body_html = ""
         for h, p in e.get("body", []):
-            body_html += f"<h2>{h}</h2>\n<p>{p}</p>\n"
+            block = p if p.strip().startswith("<") else f"<p>{p}</p>"
+            body_html += f"<h2>{h}</h2>\n{block}\n"
 
         itin = ""
         if e.get("itinerary"):
@@ -293,6 +301,8 @@ def build_event_pages():
             rows = "\n".join(f'  <div class="tl-row{" tl-now" if i == 0 else ""}"><b>{y}</b><span>{r}</span></div>'
                              for i, (y, r) in enumerate(e["timeline"]))
             timeline = f'<h2>The five-year route</h2>\n<div class="timeline reveal">\n{rows}\n</div>\n'
+            if e.get("timelineNote"):
+                timeline += f'<div class="prov-note" style="margin-top:1rem">{e["timelineNote"]}</div>\n'
 
         films = ""
         if e.get("films"):
@@ -317,14 +327,21 @@ def build_event_pages():
         if is_past:
             panel_cta = '<a class="btn btn-line" href="/events/" style="display:block; text-align:center">See upcoming rides</a>'
             panel_kicker = "Ride report"
+        elif e["status"] == "check-availability":
+            panel_cta = ('<a class="btn btn-red" href="mailto:dave@kohatumc.co.nz?subject=' + e["name"].replace(" ", "%20")
+                         + '" style="display:block; text-align:center">' + cta + '</a>')
+            panel_kicker = e["dateLabel"]
         else:
             panel_cta = '<a class="btn btn-red" href="#enquire" style="display:block; text-align:center">' + cta + '</a>'
             panel_kicker = e["dateLabel"]
         price_big = e.get("priceLabel") or "Details to come"
+        prov_inc = ('<p class="form-note" style="margin-top:.8rem">Inclusions are provisional pending confirmation by Kohatu Motorcycle Centre.</p>'
+                    if (e.get("requiresOwnerConfirmation") and e.get("included")) else "")
         panel = f"""      <aside class="book-panel reveal" aria-label="{e['name']} summary">
         <span class="kicker">{panel_kicker}</span>
         <span class="price" style="font-size:1.6rem">{price_big}</span>
         {inc}
+        {prov_inc}
         <div style="margin-top:1.2rem">{panel_cta}</div>
         <p class="alt">Questions? <a href="mailto:dave@kohatumc.co.nz">Email Dave</a></p>
       </aside>"""
@@ -506,8 +523,8 @@ def build_homepage():
         <div class="pw-body"><h3>Kohatu Park</h3><p>Open days, practice and private group sessions — adventure, enduro and kids' riding</p></div>
       </a>
       <a class="pathway reveal" href="/events/torque-and-trails/">
-        {img_tag("young-rider", "(max-width:700px) 92vw, 45vw")}
-        <div class="pw-body"><h3>Torque and Trails</h3><p>Kohatu's e-MTB event series at the park — next round to be confirmed</p></div>
+        {img_tag("emtb-group", "(max-width:700px) 92vw, 45vw")}
+        <div class="pw-body"><h3>Torque and Trails</h3><p>Kohatu's e-MTB uphill racing — next round to be confirmed</p></div>
       </a>
     </div>
   </div>
@@ -551,9 +568,9 @@ def build_homepage():
   <div class="wrap">
     <div class="why-grid">
       <div class="why-item reveal"><h3>Access riders can't get alone</h3><p>Stations, farms and forestry blocks closed to the public — negotiated ride by ride with local landowners.</p></div>
-      <div class="why-item reveal"><h3>Scouted GPX routes</h3><p>Every route scouted and supplied as a GPX download before the ride. Load it, follow it, focus on riding.</p></div>
+      <div class="why-item reveal"><h3>Scouted routes, GPX navigation</h3><p>Adventure routes are scouted in advance, with GPX navigation supplied where the event format requires it.</p></div>
       <div class="why-item reveal"><h3>Sweeps, marshals &amp; first aid</h3><p>Sweep riders on multi-days, marshals and first aid on trail rides. Nobody gets left in a creek bed.</p></div>
-      <div class="why-item reveal"><h3>Money back into the districts</h3><p>Festival entries have funded Nelson Tasman Search &amp; Rescue; ride entries support community halls, local groups and farm-track upkeep.</p></div>
+      <div class="why-item reveal"><h3>Money back into the districts</h3><p>Selected events have raised funds for Nelson Tasman Search &amp; Rescue, while some ride entries also contribute to community facilities and farm-track maintenance.</p></div>
     </div>
   </div>
 </section>
@@ -696,7 +713,7 @@ def build_aux():
     inner = """<div class="detail-main" style="max-width:52rem">
       <h2>What runs behind every ride</h2>
       <ul>
-        <li><b>Scouted routes</b> — every route is ridden and checked before the event, and supplied as a GPX download.</li>
+        <li><b>Scouted routes</b> — adventure routes are scouted in advance, with GPX navigation supplied where the event format requires it.</li>
         <li><b>Sweep riders</b> — multi-day rides run with sweep riders so nobody is left behind.</li>
         <li><b>Marshals, recovery and first aid</b> — trail rides run with marshals, recovery and first-aid support on site.</li>
         <li><b>Sign-on and briefing</b> — every event starts with registration and a riders' briefing; trail rides sign riders out at the finish.</li>
@@ -750,9 +767,9 @@ def build_aux():
     inner = f"""<div class="split" style="margin-bottom:3rem">
       <div>
         <div class="price-cards">
-          <div class="price-card"><b>$30</b><span>Adults</span></div>
-          <div class="price-card"><b>$10</b><span>Under 15</span></div>
-          <div class="price-card"><b>$40</b><span>Family pass</span></div>
+          <div class="price-card"><b>NZ$30</b><span>Adults</span></div>
+          <div class="price-card"><b>NZ$10</b><span>Under 15</span></div>
+          <div class="price-card"><b>NZ$40</b><span>Family pass</span></div>
         </div>
         <p style="color:var(--muted)">Open days 11am–4pm — check <a href="https://www.facebook.com/kohatumotorcyclecentre" style="color:var(--red)">Facebook</a> for dates, or <a href="mailto:dave@kohatumc.co.nz" style="color:var(--red)">email Dave</a> before you come. Cash only at the gate. Groups of 6+ can book the park any day for training or private events.</p>
         <p style="color:var(--muted); margin-top:.8rem">On arrival your bike gets checked and you'll sign a liability form — then ride as many laps as you like. Adventure and enduro bikes, plus a children's fun area for kids' bikes and quads (under-12s with an adult).</p>
@@ -762,7 +779,7 @@ def build_aux():
     </div>
     <h2 style="font-size:clamp(1.9rem,4vw,2.6rem); margin-bottom:1rem">Before you turn up</h2>
     <details><summary>What do I need to do before arriving?</summary><div class="a">Email <a href="mailto:dave@kohatumc.co.nz">dave@kohatumc.co.nz</a> to let us know you're coming — we'll only be in touch if there's an unforeseen closure. Questions? Call Dave on <a href="tel:+64274486688">+64 27 448 6688</a>.</div></details>
-    <details><summary>What do I need to bring?</summary><div class="a">A road-legal bike with current registration, WoF and insurance (kids' bikes excepted), cash for the gate fee, and your own food and water — there are no facilities on site yet. There's no cellphone coverage, so download the directions before you leave.</div></details>
+    <details><summary>What do I need to bring?</summary><div class="a">Bring a mechanically sound motorcycle suitable for the riding area, full protective equipment, cash for the gate fee, and your own food and water. There are currently no facilities or cellphone coverage on site, so download the directions before leaving. Contact Dave before attending if you are unsure whether your motorcycle is suitable.</div></details>
     <details><summary>Can I rent a motorbike?</summary><div class="a">Not yet — it's a service we hope to offer. It is the ideal place to test ride an adventure bike you're looking to buy.</div></details>
     <details><summary>Can I book the park for a private event or training day?</summary><div class="a">Yes — we're happy to open any day for groups of six or more. <a href="mailto:dave@kohatumc.co.nz">Email Dave</a> and we'll do our best to accommodate your crew.</div></details>"""
     simple("/kohatu-park/", "Kohatu Park · Spooners Range", "The adventure training ground",
@@ -796,7 +813,7 @@ def build_aux():
       <div class="detail-main">
         <h2>Built by riders, run by riders</h2>
         <p>Kohatu Motorcycle Centre is Dave's project: a leased block at Kohatu Park, built up with volunteer help into a training ground — in his own words, a place to train for our sport and become safer, more capable riders. But mostly for fun.</p>
-        <p>The events grew from there: local landowners opened their gates, the rides got longer, and now the calendar runs from one-day blasts and no-rego trail rides to festivals, e-MTB racing and a five-year ride down the length of the country. Every ride is scouted, supported, and finished with a story worth telling — and entries put money back into Search &amp; Rescue, community halls and the farms we cross.</p>
+        <p>The events grew from there: local landowners opened their gates, the rides got longer, and now the calendar runs from one-day blasts and no-rego trail rides to festivals, e-MTB racing and a five-year ride down the length of the country. Events are built around route planning, access arrangements and support appropriate to each format — and selected events have raised funds for Nelson Tasman Search &amp; Rescue, community facilities and farm-track maintenance.</p>
         <p>Want to talk rides, the park, or an idea for an event? <a href="mailto:dave@kohatumc.co.nz" style="color:var(--red)">Email Dave</a> or call <a href="tel:+64274486688" style="color:var(--red)">+64 27 448 6688</a>.</p>
       </div>
     </div>"""
@@ -878,7 +895,7 @@ def build_proposal():
       <h2>What's already built</h2>
       <ul>
         <li>Mobile-first design in your brand, with your photography and Blake's films</li>
-        <li>Every offering on its own page: adventure rides, festivals, trail rides, Torque and Trails e-MTB, the park</li>
+        <li>Every offering on its own page: adventure rides, festivals, trail rides, Torque and Trails, the park</li>
         <li>One event system — every card, page and Google listing reads from a single event record, so a date changes once and updates everywhere</li>
         <li>Honest event statuses (provisional / entries open / sold out / completed) with matching buttons</li>
         <li>A past-rides archive so delivered events keep selling the next ones</li>
@@ -886,17 +903,26 @@ def build_proposal():
         <li>Redirects mapped from every current kohatumc.co.nz URL — old Facebook links keep working</li>
         <li>Fast static hosting, Google event listings, privacy statement, accessibility basics</li>
       </ul>
-      <h2>What it fixes</h2>
-      <ul>
-        <li>Every event on your current site shows a past date — this one can't drift, because events live in one place</li>
-        <li>Deep in the Sounds is on Facebook but not your website — here, the next ride is the first thing visitors see</li>
-        <li>Riders currently must ring or email to enter — this is built to plug straight into online entries (Humanitix: NZ-based, no monthly fee, card fees passable to the rider, capacity and waitlists automatic)</li>
-        <li>e-MTB and park information were buried or missing — both are now first-class pages</li>
-      </ul>
-      <h2>What you'd confirm before launch</h2>
-      <p>Dates, prices, inclusions, capacities, the grading names, the Five Year Plan pack, mountain-bike series details, photo permissions, and the legal pages (terms need a proper participant agreement — worth a legal review before taking money online).</p>
       <h2>The offer</h2>
-      <p>The build you're looking at, finished and launched on kohatumc.co.nz: <b>project price on the call</b>. Ongoing updates (dates, statuses, new events) as a simple monthly care plan, or set up so you can edit events yourself.</p>
+      <p><b>NZ$3,950 fixed price</b> to finish and launch this build on kohatumc.co.nz, including:</p>
+      <ul>
+        <li>Two reasonable rounds of revisions to content and imagery</li>
+        <li>Domain connection and deployment</li>
+        <li>Ride-list form and mailing-list connection</li>
+        <li>Online entries connected through an NZ-based ticketing provider (recommendation on our call)</li>
+        <li>Basic analytics and Google Search Console setup</li>
+        <li>Redirects from every existing URL</li>
+        <li>Thirty days of post-launch defect support</li>
+      </ul>
+      <p>Ongoing: an optional <b>NZ$129/month care plan</b> — hosting oversight, event and date updates, status changes, and new event pages as your calendar moves.</p>
+      <h2>What you'd confirm before launch</h2>
+      <ul>
+        <li>Event dates, prices, inclusions and capacities (including the Five Year Plan price and pack)</li>
+        <li>Deep in the Sounds details; Torque and Trails format and next round</li>
+        <li>Park entry requirements; grading names and per-event grades</li>
+        <li>Photo and rider permissions; film usage with Blake Jones and RideLifeNZ</li>
+        <li>Privacy wording and participant terms (legal review recommended before online entries)</li>
+      </ul>
       <p style="margin-top:1.6rem">
         <a class="btn btn-red" href="mailto:ben@webhero.au?subject=Kohatu%20website">Email Ben</a>
         <a class="btn btn-ghost" href="/" style="margin-left:.6rem">Back to the site</a>

@@ -1,32 +1,295 @@
 {
   "_comment": "Asset registry. IDs are referenced by events.json (heroMedia/cardMedia) and the generator. Widths available in /img as <base>-<w>.webp. Video IDs corrected vs the external brief: full festival film is r0OEHg4zxCg.",
   "images": {
-    "hero-ford":            { "base": "hero-ford",       "widths": [480, 800, 1200, 1920], "w": 1920, "h": 1081, "alt": "Adventure riders splashing through a ford on a remote backcountry gravel road", "focal": "62% 60%" },
-    "five-year-plan":       { "base": "five-year-plan",  "widths": [480, 800, 1200], "w": 1200, "h": 900,  "alt": "Loaded adventure bike in a paddock pointing toward rugged hills", "focal": "center" },
-    "clarence-river-group": { "base": "clarence",        "widths": [480, 800, 1200], "w": 1200, "h": 676,  "alt": "Adventure riders and bikes gathered on a river gravel bar beneath bush-clad mountains", "focal": "center 55%" },
-    "sounds-jetty":         { "base": "gallery-jetty",   "widths": [480, 800], "w": 800, "h": 450, "alt": "Rider's view from a jetty over the water, snow-capped ranges beyond", "focal": "center" },
-    "sounds-landscape":     { "base": "sounds-like",     "widths": [480, 800], "w": 800, "h": 450, "alt": "Still river reach flanked by native forest hills under a blue sky", "focal": "center" },
-    "festival-aerial":      { "base": "festival",        "widths": [480, 800, 1200], "w": 1200, "h": 675, "alt": "Drone view of an event basecamp in a forested valley, riders waving beside their bikes", "focal": "center" },
-    "wellington-forest-stop": { "base": "wellington2",   "widths": [480, 800, 1200], "w": 1200, "h": 675, "alt": "Adventure and dirt bikes parked in a forest clearing during a ride stop", "focal": "center" },
-    "summer-series-group":  { "base": "summer-series",   "widths": [480, 800, 1200], "w": 1200, "h": 900, "alt": "Dozens of dirt bikes and riders parked in a forest clearing above a river gorge", "focal": "center" },
-    "farm-gate-rider":      { "base": "gallery-gate",    "widths": [480, 800], "w": 800, "h": 600, "alt": "Rider on a KTM coming through a farm gate on a forest trail", "focal": "center" },
-    "park-aerial":          { "base": "park-aerial",     "widths": [480, 800, 1200], "w": 1200, "h": 675, "alt": "Aerial view of the Kohatu training ground with mowed trail loops beside pine forest", "focal": "center" },
-    "mud-rider":            { "base": "gallery-mud",     "widths": [480, 800], "w": 480, "h": 640, "alt": "Grinning rider covered head to toe in mud beside his adventure bike", "focal": "50% 12%" },
-    "young-rider":          { "base": "gallery-wheelie", "widths": [480, 800], "w": 800, "h": 533, "alt": "Rider wheelying a red Honda across a daisy-covered paddock", "focal": "center" },
-    "tractor-river-crossing": { "base": "gallery-tractor", "widths": [480, 752], "w": 752, "h": 1020, "alt": "Motorcycle being carried across a river behind a muddy tractor", "focal": "center" },
-    "trail-rider-park":     { "base": "trail-rides",     "widths": [480, 800], "w": 800, "h": 533, "alt": "Rider catching air on a red Honda over a grass mound", "focal": "center" },
-    "airborne-adventure-bike": { "base": "gallery-air",  "widths": [480, 800], "w": 480, "h": 1084, "alt": "Adventure bike fully airborne over grass under a dramatic sky", "focal": "center" },
-    "training-conversation": { "base": "training",       "widths": [480, 800], "w": 800, "h": 533, "alt": "Riders talking around a trail bike on the grass training area at Kohatu", "focal": "center" },
-    "gallery-street":       { "base": "gallery-street",  "widths": [480, 800], "w": 800, "h": 450, "alt": "Dirt and adventure bikes parked along a small-town main street with mountains behind", "focal": "center" },
-    "gallery-lineup":       { "base": "gallery-lineup",  "widths": [480, 800], "w": 800, "h": 450, "alt": "Five riders lined up behind a locked access gate in native bush", "focal": "center" },
-    "gallery-riverbank":    { "base": "gallery-riverbank", "widths": [480, 800], "w": 800, "h": 450, "alt": "Riders walking a rocky riverbank through native beech forest", "focal": "center" },
-    "gallery-lake":         { "base": "gallery-lake",    "widths": [480, 800], "w": 800, "h": 450, "alt": "Mirror-calm bush-lined mountain lake under a clear sky", "focal": "center" },
-    "gallery-penstock":     { "base": "gallery-penstock", "widths": [480, 800], "w": 800, "h": 450, "alt": "Adventure bike parked on a mossy remote trail beside a giant hydro penstock", "focal": "center" },
-    "logo-stacked":         { "base": "logo-stacked",    "widths": [600], "w": 600, "h": 650, "alt": "Kohatu Motorcycle Centre logo", "focal": "center" }
+    "hero-ford": {
+      "base": "hero-ford",
+      "widths": [
+        480,
+        800,
+        1200,
+        1920
+      ],
+      "w": 1920,
+      "h": 1081,
+      "alt": "Adventure riders splashing through a ford on a remote backcountry gravel road",
+      "focal": "62% 60%"
+    },
+    "five-year-plan": {
+      "base": "five-year-plan",
+      "widths": [
+        480,
+        800,
+        1200
+      ],
+      "w": 1200,
+      "h": 900,
+      "alt": "Loaded adventure bike in a paddock pointing toward rugged hills",
+      "focal": "center"
+    },
+    "clarence-river-group": {
+      "base": "clarence",
+      "widths": [
+        480,
+        800,
+        1200
+      ],
+      "w": 1200,
+      "h": 676,
+      "alt": "Adventure riders and bikes gathered on a river gravel bar beneath bush-clad mountains",
+      "focal": "center 55%"
+    },
+    "sounds-jetty": {
+      "base": "gallery-jetty",
+      "widths": [
+        480,
+        800
+      ],
+      "w": 800,
+      "h": 450,
+      "alt": "Rider's view from a jetty over the water, snow-capped ranges beyond",
+      "focal": "center"
+    },
+    "sounds-landscape": {
+      "base": "sounds-like",
+      "widths": [
+        480,
+        800
+      ],
+      "w": 800,
+      "h": 450,
+      "alt": "Still river reach flanked by native forest hills under a blue sky",
+      "focal": "center"
+    },
+    "festival-aerial": {
+      "base": "festival",
+      "widths": [
+        480,
+        800,
+        1200
+      ],
+      "w": 1200,
+      "h": 675,
+      "alt": "Drone view of an event basecamp in a forested valley, riders waving beside their bikes",
+      "focal": "center"
+    },
+    "wellington-forest-stop": {
+      "base": "wellington2",
+      "widths": [
+        480,
+        800,
+        1200
+      ],
+      "w": 1200,
+      "h": 675,
+      "alt": "Adventure and dirt bikes parked in a forest clearing during a ride stop",
+      "focal": "center"
+    },
+    "summer-series-group": {
+      "base": "summer-series",
+      "widths": [
+        480,
+        800,
+        1200
+      ],
+      "w": 1200,
+      "h": 900,
+      "alt": "Dozens of dirt bikes and riders parked in a forest clearing above a river gorge",
+      "focal": "center"
+    },
+    "farm-gate-rider": {
+      "base": "gallery-gate",
+      "widths": [
+        480,
+        800
+      ],
+      "w": 800,
+      "h": 600,
+      "alt": "Rider on a KTM coming through a farm gate on a forest trail",
+      "focal": "center"
+    },
+    "park-aerial": {
+      "base": "park-aerial",
+      "widths": [
+        480,
+        800,
+        1200
+      ],
+      "w": 1200,
+      "h": 675,
+      "alt": "Aerial view of the Kohatu training ground with mowed trail loops beside pine forest",
+      "focal": "center"
+    },
+    "mud-rider": {
+      "base": "gallery-mud",
+      "widths": [
+        480,
+        800
+      ],
+      "w": 480,
+      "h": 640,
+      "alt": "Grinning rider covered head to toe in mud beside his adventure bike",
+      "focal": "50% 12%"
+    },
+    "young-rider": {
+      "base": "gallery-wheelie",
+      "widths": [
+        480,
+        800
+      ],
+      "w": 800,
+      "h": 533,
+      "alt": "Rider wheelying a red Honda across a daisy-covered paddock",
+      "focal": "center"
+    },
+    "tractor-river-crossing": {
+      "base": "gallery-tractor",
+      "widths": [
+        480,
+        752
+      ],
+      "w": 752,
+      "h": 1020,
+      "alt": "Motorcycle being carried across a river behind a muddy tractor",
+      "focal": "center"
+    },
+    "trail-rider-park": {
+      "base": "trail-rides",
+      "widths": [
+        480,
+        800
+      ],
+      "w": 800,
+      "h": 533,
+      "alt": "Rider catching air on a red Honda over a grass mound",
+      "focal": "center"
+    },
+    "airborne-adventure-bike": {
+      "base": "gallery-air",
+      "widths": [
+        480,
+        800
+      ],
+      "w": 480,
+      "h": 1084,
+      "alt": "Adventure bike fully airborne over grass under a dramatic sky",
+      "focal": "center"
+    },
+    "training-conversation": {
+      "base": "training",
+      "widths": [
+        480,
+        800
+      ],
+      "w": 800,
+      "h": 533,
+      "alt": "Riders talking around a trail bike on the grass training area at Kohatu",
+      "focal": "center"
+    },
+    "gallery-street": {
+      "base": "gallery-street",
+      "widths": [
+        480,
+        800
+      ],
+      "w": 800,
+      "h": 450,
+      "alt": "Dirt and adventure bikes parked along a small-town main street with mountains behind",
+      "focal": "center"
+    },
+    "gallery-lineup": {
+      "base": "gallery-lineup",
+      "widths": [
+        480,
+        800
+      ],
+      "w": 800,
+      "h": 450,
+      "alt": "Five riders lined up behind a locked access gate in native bush",
+      "focal": "center"
+    },
+    "gallery-riverbank": {
+      "base": "gallery-riverbank",
+      "widths": [
+        480,
+        800
+      ],
+      "w": 800,
+      "h": 450,
+      "alt": "Riders walking a rocky riverbank through native beech forest",
+      "focal": "center"
+    },
+    "gallery-lake": {
+      "base": "gallery-lake",
+      "widths": [
+        480,
+        800
+      ],
+      "w": 800,
+      "h": 450,
+      "alt": "Mirror-calm bush-lined mountain lake under a clear sky",
+      "focal": "center"
+    },
+    "gallery-penstock": {
+      "base": "gallery-penstock",
+      "widths": [
+        480,
+        800
+      ],
+      "w": 800,
+      "h": 450,
+      "alt": "Adventure bike parked on a mossy remote trail beside a giant hydro penstock",
+      "focal": "center"
+    },
+    "logo-stacked": {
+      "base": "logo-stacked",
+      "widths": [
+        600
+      ],
+      "w": 600,
+      "h": 650,
+      "alt": "Kohatu Motorcycle Centre logo",
+      "focal": "center"
+    },
+    "emtb-hero": {
+      "base": "emtb-hero",
+      "widths": [
+        480,
+        800,
+        1200
+      ],
+      "w": 1200,
+      "h": 900,
+      "alt": "Mountain bikers regrouping at a hilltop trig marker with cloud-draped ranges behind",
+      "focal": "center"
+    },
+    "emtb-group": {
+      "base": "emtb-group",
+      "widths": [
+        480,
+        800,
+        1200
+      ],
+      "w": 1200,
+      "h": 675,
+      "alt": "Muddy e-MTB riders gathered mid-ride in a grassy clearing",
+      "focal": "center"
+    }
   },
   "videos": [
-    { "id": "r0OEHg4zxCg", "title": "Nelson Tasman Motorcycle Festival 2025 — full film", "credit": "Blake Jones" },
-    { "id": "7Odz8i9qgms", "title": "Festival 2025 — the Nelson ADV ride", "credit": "Blake Jones" },
-    { "id": "2huJ1oYqfSk", "title": "Kohatu Motorcycle Centre — the park", "credit": "RideLifeNZ" }
+    {
+      "id": "r0OEHg4zxCg",
+      "title": "Nelson Tasman Motorcycle Festival 2025 — full film",
+      "credit": "Blake Jones"
+    },
+    {
+      "id": "7Odz8i9qgms",
+      "title": "Festival 2025 — the Nelson ADV ride",
+      "credit": "Blake Jones"
+    },
+    {
+      "id": "2huJ1oYqfSk",
+      "title": "Kohatu Motorcycle Centre — the park",
+      "credit": "RideLifeNZ"
+    }
   ]
 }

@@ -6,7 +6,7 @@
       "name": "Deep in the Sounds",
       "category": "adventure",
       "format": "multi-day",
-      "status": "interest-open",
+      "status": "check-availability",
       "dateLabel": "24–26 July 2026",
       "startDate": "2026-07-24",
       "region": "Marlborough Sounds",
@@ -14,7 +14,7 @@
       "duration": "3 days",
       "distance": null,
       "price": null,
-      "priceLabel": "Entries with Dave",
+      "priceLabel": "Contact Dave for availability",
       "currency": "NZD",
       "heroMedia": "sounds-landscape",
       "cardMedia": "sounds-jetty",
@@ -38,14 +38,14 @@
       "category": "adventure",
       "format": "multi-day",
       "status": "provisional",
-      "dateLabel": "August 2026 · Year 1 of 5",
+      "dateLabel": "August 2026 · exact dates to be confirmed",
       "startDate": "2026-08",
       "region": "Cape Reinga — Northland",
       "grade": 3,
       "duration": "6 days per year",
       "distance": "The length of New Zealand over five years",
-      "price": 2990,
-      "priceLabel": "NZ$2,990 per year",
+      "price": null,
+      "priceLabel": "Price to be confirmed",
       "currency": "NZD",
       "heroMedia": "five-year-plan",
       "cardMedia": "five-year-plan",
@@ -87,9 +87,9 @@
         "6 nights' accommodation",
         "Dinner on 6 evenings",
         "GPX route downloads",
-        "Two sweep riders",
-        "All land access fees",
-        "Luggage van for your gear",
+        "Sweep support",
+        "Land access fees",
+        "Luggage support",
         "Rest days built in"
       ],
       "bring": [
@@ -100,7 +100,8 @@
       "faqs": [],
       "bookingUrl": null,
       "sourceUrl": "https://www.kohatumc.co.nz/adventure-motorcycle-events/the-five-year-plan-jMPFu",
-      "requiresOwnerConfirmation": true
+      "requiresOwnerConfirmation": true,
+      "timelineNote": "<ul><li>Riders may enter the current annual leg.</li><li>Riders may also begin from Cape Reinga and complete the accumulated sections.</li><li>The exact logistics and entry options for each year require Dave's confirmation.</li></ul>"
     },
     {
       "id": "sounds-like",
@@ -230,7 +231,7 @@
       "startDate": "2027-05",
       "region": "Nelson — Founders Heritage Park",
       "grade": 1,
-      "gradeLabel": "All riders",
+      "gradeLabel": "Adventure and road-bike riders",
       "duration": "2 days",
       "distance": null,
       "price": 350,
@@ -253,12 +254,16 @@
       ],
       "body": [
         [
-          "Two events, one festival",
-          "Adventure bikes ride private-land courses on both days. Road bikes of every class join a Saturday treasure hunt around Nelson Tasman. Then everyone rolls into Founders Heritage Park together — static displays, vendors and food trucks, open to the public."
+          "Adventure programme",
+          "Adventure bikes ride private-land courses on <b>both days</b>. Entry <b>NZ$350</b> — suitable off-road-capable adventure bikes; grading and requirements confirmed with the entry pack."
         ],
         [
-          "Riding for the rescue crew",
-          "The festival raises funds for Nelson Tasman Search & Rescue — the crew who come and get us when a ride goes properly wrong."
+          "Road-bike programme",
+          "Road bikes of every class join the <b>Saturday treasure hunt</b> around Nelson Tasman. Entry <b>NZ$45</b> — open to all road-registered bikes."
+        ],
+        [
+          "The finish",
+          "Everyone rolls into Founders Heritage Park together — static displays, vendors and food trucks, open to the public. The festival raises funds for Nelson Tasman Search &amp; Rescue."
         ]
       ],
       "included": [
@@ -283,7 +288,7 @@
       "startDate": "2027-05",
       "region": "Trentham & Masterton — Brewtown",
       "grade": 1,
-      "gradeLabel": "All riders",
+      "gradeLabel": "Adventure and road-bike riders",
       "duration": "2 days",
       "distance": null,
       "price": 350,
@@ -294,12 +299,16 @@
       "summary": "Adventure courses over council parks, forestry and private land not normally open to riders, plus a Saturday poker run from Trentham and Masterton to Brewtown.",
       "body": [
         [
-          "The festival",
-          "An event for all classes and types of motorcycle. Adventure courses run over two days across council parks, forestry and private land not normally open to riders."
+          "Adventure programme",
+          "Adventure courses run over <b>two days</b> across council parks, forestry and private land not normally open to riders. Entry <b>NZ$350</b>."
         ],
         [
-          "The poker run",
-          "Saturday's poker run starts in Trentham and Masterton and ends at Brewtown — seven locations, collect a playing card at each, discard two, and present your best poker hand for prizes. Saturday evening, all riders gather at the Brewtown greenspace for static displays while the brews and food trucks keep everyone fed."
+          "Road-bike programme",
+          "Saturday's <b>poker run</b> starts in Trentham and Masterton and ends at Brewtown — seven locations, collect a card at each, best poker hand wins. Entry <b>NZ$45</b>."
+        ],
+        [
+          "The evening",
+          "Saturday evening, all riders gather at the Brewtown greenspace for static displays while the brews and food trucks keep everyone fed."
         ]
       ],
       "included": [
@@ -475,9 +484,9 @@
       "category": "emtb",
       "format": "series",
       "status": "provisional",
-      "dateLabel": "Series — next round to be announced",
+      "dateLabel": "Next round to be confirmed",
       "startDate": null,
-      "region": "Kohatu Park",
+      "region": "Selected trail locations, Nelson",
       "grade": null,
       "gradeLabel": "e-MTB riders",
       "duration": "Series",
@@ -485,17 +494,21 @@
       "price": null,
       "priceLabel": "Entry details with Dave",
       "currency": "NZD",
-      "heroMedia": "park-aerial",
-      "cardMedia": "young-rider",
-      "summary": "Kohatu's e-mountain-bike event series at the park — past rounds in the gallery, next round details to be confirmed.",
+      "heroMedia": "emtb-hero",
+      "cardMedia": "emtb-group",
+      "summary": "Kohatu's e-mountain-bike uphill racing format, held at selected trail locations around Nelson — past riders in the gallery, next round to be confirmed.",
       "body": [
         [
           "The series",
-          "Torque and Trails is Kohatu's e-mountain-bike event series, run on the park's hill country. Past rounds have brought e-MTB riders together on the same terrain the motorbikes train on — you'll spot them mid-ride in the gallery."
+          "Torque and Trails is Kohatu's e-mountain-bike uphill racing format, held at selected trail locations around Nelson. The first published event was Round One of a proposed three-round series at Codgers."
+        ],
+        [
+          "Previous format",
+          "<ul><li>E-mountain bikes only</li><li>Uphill racing on selected downhill trails</li><li>Four timed climbs and three descents in the first published round</li><li>An outright fastest-time competition</li><li>A separate handicap competition based on rider age, rider weight and bike torque</li><li>Sponsor-supported prizes and an evening prizegiving</li></ul>"
         ],
         [
           "Next round",
-          "Format, dates and entry details for the next round are being confirmed with Dave — register interest below and you'll hear first."
+          "Next-round dates, location, format, sponsors and entry details are to be confirmed by Dave. Register interest below and you'll hear first."
         ]
       ],
       "included": [],
