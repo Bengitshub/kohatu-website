@@ -68,3 +68,19 @@ At go-live (if Dave signs): remove `X-Robots-Tag: noindex` from `_headers`, open
 8. After a week of stability: cancel the Squarespace subscription (export nothing needed — all content migrated).
 
 Ownership options: (a) site stays on Webhero's Netlify under the NZ$129/mo care plan — recommended; (b) transfer the Netlify site + GitHub repo to Dave's own accounts if he wants self-management.
+
+## Editing & longevity (call-prep answers)
+
+**Can Dave edit it?** Three tiers:
+1. **Now (care plan)**: Dave texts/emails a change → edit src/data/events.json → rebuild → deploy. Minutes. His "CMS" is his phone.
+2. **Self-edit add-on (sell later, ~1 day's work)**: link the GitHub repo to Netlify push-to-deploy (build cmd: `python3 build_v2.py`, publish `kohatu-netlify-deploy`), then add a git-based editor (Sveltia CMS / Pages CMS) exposing the SAFE fields per event — status, dateLabel, priceLabel, summary. Dave logs in, edits a form, saves; site rebuilds itself. Keep structural/body edits with Webhero. Note: Netlify Identity is deprecated — use GitHub-app auth (Sveltia) or Pages CMS.
+3. Full CMS platform migration: don't — loses the speed/simplicity that is the product.
+
+Recommended at go-live regardless of tier: link repo → Netlify auto-build (kills zip deploys + per-session tokens for us too).
+
+**1 year+ outlook:**
+- Static HTML doesn't rot: no plugins, no security patching, no PHP/DB. Only moving parts are content and third-party services (ticketing/mailing — managed, self-updating; SSL auto-renews).
+- Costs: Netlify free tier at this traffic; domain renewal stays at iwantmyname (~NZ$40/yr, Dave's). If Netlify ever changes terms, the folder deploys to Cloudflare Pages in minutes (_redirects/_headers compatible) — no lock-in.
+- Annual rhythm (care-plan content): season flip each spring (new events in events.json, completed ones auto-archive), FYP year rollover (timeline "tl-now" moves to next year), fresh season photos, Search Console review.
+- Continuity answer for Dave: he holds the repo, the handover zip and the runbook — any developer can take over in an afternoon.
+- Pricing objection to expect: care plan NZ$1,548/yr vs Squarespace ~NZ$400/yr. Answer: Squarespace was a tool he had to drive (and the stale site shows the real cost); the care plan is a webmaster. Optional lighter tier is Ben's call.
