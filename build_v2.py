@@ -14,6 +14,7 @@ IMG = MEDIA["images"]
 EV = {e["id"]: e for e in DATA}
 
 BASE_URL = "https://kohatu-demo.netlify.app"
+SITEMAP_PATHS = []
 PREVIEW = True  # flip to False at production launch: removes site-wide noindex
 
 STATUS = {
@@ -188,6 +189,8 @@ def page(path, title, desc, body, jsonld="", ogimg="img/hero-ford-1200.webp", no
         full = os.path.join(full, "index.html")
     with open(full, "w") as f:
         f.write(html)
+    if not noindex:
+        SITEMAP_PATHS.append(path)
     print("wrote", path)
 
 
@@ -1012,6 +1015,19 @@ def prune_v1():
             print("pruned", f)
 
 
+def write_sitemap():
+    # only meaningful at launch; harmless to skip while the preview is noindexed
+    if PREVIEW:
+        sm = os.path.join(OUT, "sitemap.xml")
+        if os.path.exists(sm):
+            os.remove(sm)
+        return
+    urls = "\n".join(f"  <url><loc>{BASE_URL}{p}</loc></url>" for p in sorted(set(SITEMAP_PATHS)))
+    with open(os.path.join(OUT, "sitemap.xml"), "w") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "\n</urlset>\n")
+    print("wrote sitemap.xml", len(set(SITEMAP_PATHS)), "urls")
+
+
 if __name__ == "__main__":
     build_event_pages()
     build_listings()
@@ -1020,5 +1036,6 @@ if __name__ == "__main__":
     build_proposal()
     write_redirects()
     build_404()
+    write_sitemap()
     prune_v1()
     print("V2 build complete")

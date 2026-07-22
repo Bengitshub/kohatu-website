@@ -84,3 +84,15 @@ Recommended at go-live regardless of tier: link repo → Netlify auto-build (kil
 - Annual rhythm (care-plan content): season flip each spring (new events in events.json, completed ones auto-archive), FYP year rollover (timeline "tl-now" moves to next year), fresh season photos, Search Console review.
 - Continuity answer for Dave: he holds the repo, the handover zip and the runbook — any developer can take over in an afternoon.
 - Pricing objection to expect: care plan NZ$1,548/yr vs Squarespace ~NZ$400/yr. Answer: Squarespace was a tool he had to drive (and the stale site shows the real cost); the care plan is a webmaster. Optional lighter tier is Ben's call.
+
+## SEO (call-prep answers)
+
+**What Dave has to lose: almost nothing.** Current site: brand-only homepage title, stale future-tense meta description, Article (not Event) schema with the old designer's Gmail as the org contact, duplicate indexed pages (/home, /home-2, old festival page), event excerpts that are just dates, and no Google Business Profile found. His discovery is Facebook, not Google — the rebuild risks nothing meaningful and preserves the rest.
+
+**What survives the cutover:** the domain (all backlink authority attaches to kohatumc.co.nz, not Squarespace), every existing URL via one-to-one 301s (link equity follows), brand-query rankings.
+
+**What improves:** proper Event+Offer schema per event (rich-result eligibility his site has never had) · unique keyword+location titles/descriptions per page · clean per-event URLs · static+CDN Core Web Vitals · corrected Organization schema · duplicate stale pages killed via 301 · past-rides archive = content that compounds every season.
+
+**Biggest single win is off-site:** create the missing Google Business Profile (events as Products, photo cadence, review requests after each ride) — local pack ≈ GBP + reviews. Recommend adding as a launch/care-plan line item.
+
+**Launch mechanics (automated/runbooked):** sitemap.xml auto-generates when PREVIEW=False (excludes proposal); submit in Search Console; flip noindex; expect weeks (not days) for re-crawl. Set expectations honestly: brand queries safe immediately, non-brand growth ("adventure rides Nelson/NZ") builds over months.
